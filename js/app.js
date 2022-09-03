@@ -8,15 +8,13 @@ const cate = (items, name) => {
 };
 // category display part start
 const displayPost = (post, name) => {
-  // console.log(post)
-  // category part start
+
   const containerrow = document.getElementById("postRow");
   containerrow.innerHTML = ``;
   const newData = post.sort((a, b) => {
     return b.total_view - a.total_view;
   });
   newData.forEach((card) => {
-    // console.log(card)
     const div = document.createElement("div");
     div.classList.add("row", "bg-light", "p-3","items", "rounded");
     div.innerHTML = `
