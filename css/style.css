@@ -1,6 +1,6 @@
 /* ================================================= */
 /* all common css start */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -8,8 +8,8 @@
 }
 
 body {
-     background-color: #B3b3b3;
-   font-family: 'Poppins', sans-serif;
+  background-color: #b3b3b3;
+  font-family: "Poppins", sans-serif;
 }
 
 /* ================================================= */
@@ -35,60 +35,69 @@ body {
 }
 /* navbar part css end */
 
-
 /* category list css start */
 .category ul {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  margin: 30px 10px;
+  flex-wrap: wrap;
+  padding:  0px !important;
 }
 .category ul li {
   list-style-type: none;
-  font-size: 18px;
+  font-size: 16px;
   text-transform: uppercase;
   font-weight: 600;
+  padding: 5px 10px;
 }
 /* category list css end */
 
 /* category post all css start */
-.thamble h3{
-font-size: 20px;
-font-weight: bold;
+.thamble h3 {
+  font-size: 20px;
+  font-weight: bold;
 }
-.view h3{
-font-size: 20px;
-font-weight: bold;
-margin-right: 10px;
+.view h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 10px;
 }
-.view i{
-font-size: 22px;
+.view i {
+  font-size: 22px;
 }
-.detalis i{
+.detalis i {
   font-size: 25px;
   font-weight: 700;
   color: blue;
 }
-.items{
-margin: 50px;
+.items {
+  margin: 30px 0px;
 }
-.card-img img{
+.card-img img {
   width: 100%;
 }
-.thamble img{
+.thamble img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
 }
-p{
-     font-size: 16px;
+p {
+  font-size: 16px;
 }
- .foot{
-     margin-top: 120px;
- }
- .modal-body img{
-     margin-bottom: 10px;
-     width: 100%;
- }
+.foot {
+  margin-top: 120px;
+}
+.modal-body img {
+  margin-bottom: 10px;
+  width: 100%;
+}
 /* category post all css end */
+
+@media only screen and (max-width: 991px) {
+}
+
+@media only screen and (max-width: 576px) {
+.rating{
+  display: none;
+}
+
+}

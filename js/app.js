@@ -1,17 +1,21 @@
 // category all list post part
-const cate = (items) => {
+const cate = (items, name) => {
   const url = `https://openapi.programming-hero.com/api/news/category/${items}`;
   fetch(url)
     .then((res) => res.json())
-    .then((data) => displayPost(data.data));
+    .then((data) => displayPost(data.data, name))
+    .catch((error) => console.log(error));
 };
 // category display part start
-const displayPost = (post) => {
+const displayPost = (post, name) => {
   // console.log(post)
   // category part start
   const containerrow = document.getElementById("postRow");
   containerrow.innerHTML = ``;
-  post.forEach((card) => {
+  const newData = post.sort((a, b) => {
+    return b.total_view - a.total_view;
+  });
+  newData.forEach((card) => {
     // console.log(card)
     const div = document.createElement("div");
     div.classList.add("row", "bg-light", "p-3", "items", "rounded");
@@ -21,14 +25,12 @@ const displayPost = (post) => {
                  <img src="${card.thumbnail_url}" alt="">
                 </div> 
             </div>
-              <div class="col-lg-8 d-sm-block">
+              <div class="col-lg-8 col-sm-12 d-sm-block p-0">
                     <div class="text-title py-2">
                          <h4>${card.title}</h4>
-                         <p class="text-muted py-3">${card.details.slice(
-                           0,
-                           200
-                         )}</p>
-                         <p class="text-muted">Fancy some shopping deals? Check out these amazing sales: Zara Black Friday, ASOS Black Friday, Missoma Black Friday and Gucci Black Friday...</p>
+                         <p class="text-muted py-3">${
+                           card.details.slice(0, 500) + "..."
+                         }</p>
                     </div>
                      <div class="d-flex justify-content-between  align-items-center mt-5">
 
@@ -79,7 +81,7 @@ const displayPost = (post) => {
   // post found part
   const nofound = document.getElementById("nofound");
   nofound.innerHTML = `
-     <h4>${post.length} items found for category</h4>
+     <h4>${post.length} items found for ${name}</h4>
      `;
   toggleSpinner(false);
 };
@@ -87,8 +89,10 @@ const displayPost = (post) => {
 const loadcategory = () => {
   fetch("https://openapi.programming-hero.com/api/news/categories")
     .then((res) => res.json())
-    .then((data) => displayCategory(data.data.news_category));
+    .then((data) => displayCategory(data.data.news_category))
+    .catch((error) => console.log(error));
 };
+
 // display category list part
 const displayCategory = (list) => {
   const categoryList = document.getElementById("category-list");
@@ -101,7 +105,7 @@ const displayCategory = (list) => {
     categoryList.appendChild(li);
     li.addEventListener("click", function () {
       toggleSpinner(true);
-      cate(lists.category_id);
+      cate(lists.category_id, lists.category_name);
     });
   });
 };
@@ -109,10 +113,15 @@ const displayCategory = (list) => {
 // category detalis modal part start
 const loadDeatils = async (news_id) => {
   const url = `https://openapi.programming-hero.com/api/news/${news_id}`;
-  const res = await fetch(url);
-  const data = await res.json();
-  displayDeatils(data.data[0]);
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    displayDeatils(data.data[0]);
+  } catch (error) {
+    console.log(error);
+  }
 };
+// display Deatils part start
 const displayDeatils = (data) => {
   const detalisTitle = document.getElementById("categoryDeatilesModalLabel");
   detalisTitle.innerText = data.category_id;
@@ -123,7 +132,7 @@ const displayDeatils = (data) => {
       <p><b>Author: </b>${
         data.author.name ? data.author.name : "no found data"
       }</p>
-      <p><b>published Date: </b>   ${
+      <p><b>published Date: </b>${
         data.author.published_date
           ? data.author.published_date
           : "no found data"
@@ -131,7 +140,7 @@ const displayDeatils = (data) => {
       <p><b>Details: </b>  ${data.details.slice(0, 200)}</p>
      `;
 };
-
+// loader part start
 const toggleSpinner = (loader) => {
   const loaders = document.getElementById("loader");
   if (loader) {
@@ -141,4 +150,6 @@ const toggleSpinner = (loader) => {
   }
 };
 
-loadcategory('');
+cate("05", "Entertainment");
+
+loadcategory();
