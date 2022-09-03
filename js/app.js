@@ -24,10 +24,10 @@ const displayPost = (post) => {
               <div class="col-lg-9">
                     <div class="text-title py-2">
                          <h4>${card.title}</h4>
-                         <p class="text-muted py-3">${
-                           card.details.slice(0,200)
-                             
-                         }</p>
+                         <p class="text-muted py-3">${card.details.slice(
+                           0,
+                           200
+                         )}</p>
                          <p class="text-muted">Fancy some shopping deals? Check out these amazing sales: Zara Black Friday, ASOS Black Friday, Missoma Black Friday and Gucci Black Friday...</p>
                     </div>
                      <div class="d-flex justify-content-between  align-items-center">
@@ -40,11 +40,11 @@ const displayPost = (post) => {
                                 ? card.author.name
                                 : "no found data"
                             }</h3>
-                            <h5>Jan 10, 2022 </h5>
+                            <h6 class="text-muted">${card.author.published_date ? card.author.published_date:"no found data"}</h6>
                           </div>
                          </div>
 
-                         <div class="view d-flex justify-content-center align-items-center">
+                         <div class="view d-flex justify-content-center align-items-center text-muted">
                          <div>
                          <i class="fa-regular fa-eye"></i>
                          </div>
