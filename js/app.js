@@ -25,9 +25,8 @@ const displayPost = (post) => {
                     <div class="text-title py-2">
                          <h4>${card.title}</h4>
                          <p class="text-muted py-3">${
-                           card.details.slice > 200
-                             ? card.details.slice(0, 200) && +"..."
-                             : card.details
+                           card.details.slice(0,200)
+                             
                          }</p>
                          <p class="text-muted">Fancy some shopping deals? Check out these amazing sales: Zara Black Friday, ASOS Black Friday, Missoma Black Friday and Gucci Black Friday...</p>
                     </div>
@@ -46,7 +45,9 @@ const displayPost = (post) => {
                          </div>
 
                          <div class="view d-flex justify-content-center align-items-center">
-                          <i class="fa-regular fa-eye"></i>
+                         <div>
+                         <i class="fa-regular fa-eye"></i>
+                         </div>
                           <div class="ms-2">
                            <h3>${
                              card.total_view ? card.total_view : "no found data"
