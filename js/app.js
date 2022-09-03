@@ -30,9 +30,9 @@ const displayPost = (post) => {
                          )}</p>
                          <p class="text-muted">Fancy some shopping deals? Check out these amazing sales: Zara Black Friday, ASOS Black Friday, Missoma Black Friday and Gucci Black Friday...</p>
                     </div>
-                     <div class="d-flex justify-content-between  align-items-center">
+                     <div class="d-flex justify-content-between  align-items-center mt-5">
 
-                         <div class="thamble d-flex align-items-center mt-5">
+                         <div class="thamble d-flex align-items-center justify-content-lg-around">
                           <img src="${card.author.img}" alt="">
                           <div class="ms-2">
                             <h3>${
@@ -40,7 +40,11 @@ const displayPost = (post) => {
                                 ? card.author.name
                                 : "no found data"
                             }</h3>
-                            <h6 class="text-muted">${card.author.published_date ? card.author.published_date:"no found data"}</h6>
+                            <h6 class="text-muted">${
+                              card.author.published_date
+                                ? card.author.published_date
+                                : "no found data"
+                            }</h6>
                           </div>
                          </div>
 
