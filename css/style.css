@@ -87,4 +87,8 @@ p{
  .foot{
      margin-top: 120px;
  }
+ .modal-body img{
+     margin-bottom: 10px;
+     width: 100%;
+ }
 /* category post all css end */

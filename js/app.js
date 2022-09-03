@@ -16,12 +16,12 @@ const displayPost = (post) => {
     const div = document.createElement("div");
     div.classList.add("row", "bg-light", "p-3", "items", "rounded");
     div.innerHTML = `
-             <div class="col-lg-4">
+             <div class="col-lg-4 col-sm-12">
                 <div class="card-img">
                  <img src="${card.thumbnail_url}" alt="">
                 </div> 
             </div>
-              <div class="col-lg-8">
+              <div class="col-lg-8 d-sm-block">
                     <div class="text-title py-2">
                          <h4>${card.title}</h4>
                          <p class="text-muted py-3">${card.details.slice(
