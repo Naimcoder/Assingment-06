@@ -45,8 +45,9 @@ body {
 }
 .category ul li {
   list-style-type: none;
-  font-size: 20px;
+  font-size: 16px;
   text-transform: uppercase;
+  font-weight: 500;
 }
 /* category list css end */
 
