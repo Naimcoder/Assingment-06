@@ -46,7 +46,7 @@ const displayPost = (post) => {
                          </div>
 
                          <div class="view d-flex justify-content-center align-items-center">
-                          <i class="fa-solid fa-eye fs-2"></i>
+                          <i class="fa-regular fa-eye"></i>
                           <div class="ms-2">
                            <h3>${
                              card.total_view ? card.total_view : "no found data"
