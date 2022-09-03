@@ -18,22 +18,21 @@ const displayPost = (post, name) => {
   newData.forEach((card) => {
     // console.log(card)
     const div = document.createElement("div");
-    div.classList.add("row", "bg-light", "p-3", "items", "rounded");
+    div.classList.add("row", "bg-light", "p-3","items", "rounded");
     div.innerHTML = `
              <div class="col-lg-4 col-sm-12">
                 <div class="card-img">
                  <img src="${card.thumbnail_url}" alt="">
                 </div> 
             </div>
-              <div class="col-lg-8 col-sm-12 d-sm-block p-0">
-                    <div class="text-title py-2">
+              <div class="col-lg-8 col-sm-12  p-0">
+                    <div class="text-title">
                          <h4>${card.title}</h4>
                          <p class="text-muted py-3">${
                            card.details.slice(0, 500) + "..."
                          }</p>
                     </div>
-                     <div class="d-flex justify-content-between  align-items-center mt-5">
-
+                     <div class="d-flex justify-content-between itemed">
                          <div class="thamble d-flex align-items-center justify-content-lg-around">
                           <img src="${card.author.img}" alt="">
                           <div class="ms-2">
@@ -71,7 +70,7 @@ const displayPost = (post, name) => {
                          <div class="detalis">
                          <button onclick="loadDeatils('${
                            card._id
-                         }')" class="btn btn-dengar" data-bs-toggle="modal" data-bs-target="#categoryDeatilesModal"><i class="fa-solid fa-arrow-right"></i></button>
+                         }')" class="btn btn-dengar btn-border" data-bs-toggle="modal" data-bs-target="#categoryDeatilesModal"><i class="fa-solid fa-arrow-right"></i></button>
                          </div>
                      </div>
                    </div>
