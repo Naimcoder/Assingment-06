@@ -1,0 +1,81 @@
+/* ================================================= */
+/* all common css start */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+     background-color: #B3b3b3;
+   font-family: 'Poppins', sans-serif;
+}
+
+/* ================================================= */
+/* all common css end */
+
+/* navbar part css start */
+.navbar-brand {
+  font-size: 30px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: brown;
+}
+.navbar-nav .nav-link {
+  font-size: 22px;
+  margin-right: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
+}
+.navbar-nav .nav-link:hover {
+  color: blue;
+}
+/* navbar part css end */
+
+
+/* category list css start */
+.category ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin: 30px 10px;
+}
+.category ul li {
+  list-style-type: none;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+/* category list css end */
+
+/* category post all css start */
+.thamble h3{
+font-size: 20px;
+font-weight: bold;
+}
+.view h3{
+font-size: 20px;
+font-weight: bold;
+margin-right: 10px;
+}
+.view i{
+font-size: 18px;
+}
+.detalis i{
+  font-size: 25px;
+  color: blue;
+}
+.items{
+margin: 50px;
+}
+.card-img img{
+  width: 100%;
+}
+.thamble img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+/* category post all css end */
