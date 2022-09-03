@@ -18,7 +18,8 @@ body {
 /* navbar part css start */
 .navbar-brand {
   font-size: 30px;
-  font-weight: 500;
+  font-weight: 600;
+  color: crimson;
   text-transform: uppercase;
   color: brown;
 }
@@ -47,7 +48,7 @@ body {
   list-style-type: none;
   font-size: 16px;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 600;
 }
 /* category list css end */
 
@@ -82,4 +83,7 @@ margin: 50px;
 p{
      font-size: 16px;
 }
+ .foot{
+     margin-top: 120px;
+ }
 /* category post all css end */
