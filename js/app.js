@@ -11,8 +11,7 @@ const displayPost = (post) => {
   // category part start
   const containerrow = document.getElementById("postRow");
   containerrow.innerHTML = ``;
-     post.forEach((card) => {
-          const [details] = card;
+  post.forEach((card) => {
     // console.log(card)
     const div = document.createElement("div");
     div.classList.add("row", "bg-light", "p-3", "items", "rounded");
@@ -25,11 +24,15 @@ const displayPost = (post) => {
               <div class="col-lg-8">
                     <div class="text-title py-2">
                          <h4>${card.title}</h4>
-                         <p class="text-muted py-3">${details.length>200?details.slice(0,200) + '...': "Entertainment"}</p>
+                         <p class="text-muted py-3">${card.details.slice(
+                           0,
+                           200
+                         )}</p>
+                         <p class="text-muted">Fancy some shopping deals? Check out these amazing sales: Zara Black Friday, ASOS Black Friday, Missoma Black Friday and Gucci Black Friday...</p>
                     </div>
                      <div class="d-flex justify-content-between  align-items-center">
 
-                         <div class="thamble d-flex align-items-lg-start">
+                         <div class="thamble d-flex align-items-center mt-5">
                           <img src="${card.author.img}" alt="">
                           <div class="ms-2">
                             <h3>${
