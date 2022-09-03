@@ -137,4 +137,4 @@ const toggleSpinner = (loader) => {
   }
 };
 
-loadcategory();
+loadcategory('');
